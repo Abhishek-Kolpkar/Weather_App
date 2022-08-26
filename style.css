@@ -1,4 +1,5 @@
 /* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
 /***** reset CSS start *****/
@@ -27,9 +28,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
@@ -49,10 +47,63 @@ table {
 
 
 /***** global CSS start *****/
-
+*{
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+}
+body {
+	line-height: 1;
+	min-height: 100vh;
+	background-color: thistle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper{
+  width: 400px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
 /***** global CSS end *****/
 
 
 /***** general CSS start *****/
+.wrapper .input-part{
+	display: flex;
+	flex-direction: column;
+  margin: 20px 25px 30px;
+}
+/* .wrapper.active .input-part{
+  display: none;
+} */
 
+.wrapper h1{
+  font-size: 30px;
+  font-weight: 500;
+  color: #43AFFC;
+  padding: 10px 15px;
+}
+
+.input-part input{
+	width: 100%;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.input-part input:focus{
+	outline-color: thistle;
+}
+
+.input-part button{
+	width: 100px;
+	margin: 0 auto;
+	padding: 5px;
+	background-color: #43AFFC;
+	font-size: 20px;
+	border: none;
+	text-align: center;
+}
 /***** general CSS end *****/
