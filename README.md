@@ -1,3 +1,6 @@
+# Deploy using GitHub page
+https://pro-abhi.github.io/Weather_App/
+
 # Weather App Home-Screen
 ![home-screen](https://user-images.githubusercontent.com/105339279/186913731-6e34bcf0-1fe5-463d-9968-e3f97d7d2e1d.png)
 
