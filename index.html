@@ -10,29 +10,57 @@
     <!-- font-awesome icons cdn link -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
     />
   </head>
   <body>
     <div class="wrapper">
-      <h1>Weather App</h1>
-      <div class="input-part">
+      <header>
+        <i class="bx bx-left-arrow-alt"></i>
+        Weather App
+      </header>
+      <section class="input-part">
         <input
           type="text"
           placeholder="Enter your city name"
           class="cityName"
         />
         <button type="submit" class="submitButton">Submit</button>
-        <section class="weather-part"></section>
-      </div>
+      </section>
+      <section class="weather-part">
+        <div class="location">
+          <i class="bx bx-map"></i>
+          <span>_, _</span>
+        </div>
+        <div class="bottom-details">
+          <div class="column feels">
+            <i class="bx bxs-thermometer"></i>
+            <div class="details temp">
+              <span class="numb-2">_</span>
+              <span>°C</span>
+              <p>Temp</p>
+            </div>
+          </div>
+          <div class="column humidity">
+            <i class="bx bxs-droplet-half"></i>
+            <div class="details">
+              <span>_</span>
+              <p>Humidity</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 
   <!-- JavaScript code -->
   <script>
     //query selectors
-    var cityInput = document.querySelector(".cityName");
-    var btn1 = document.querySelector(".submitButton");
+    let wrapper = document.querySelector(".wrapper");
+    let cityInput = document.querySelector(".cityName");
+    let btn1 = document.querySelector(".submitButton");
+    let weatherPart = wrapper.querySelector(".weather-part");
+    let arrowBack = document.querySelector("header i");
     //event Listeners
     btn1.addEventListener("click", function (name) {
       fetch(
@@ -40,15 +68,27 @@
       ) //fetching api data
         .then((response) => response.json()) //text --> json
         .then((data) => {
-          let result = `<div><h1>city : ${data.name}</h1> 
-              <h1>temp = ${Math.floor(data["main"].temp - 273)} °C</h1>
-              <h1> pressure = ${data["main"].pressure} </h1>
-              <h1> humidity = ${data["main"].humidity} </h1></div>`;
-          let container = document.querySelector(".weather-part");
-          container.innerHTML = result;
+          const city = data.name;
+          const country = data.sys.country;
+          const { temp, feels_like, humidity } = data.main;
+          weatherPart.querySelector(
+            ".location span"
+          ).innerText = `${city}, ${country}`;
+          weatherPart.querySelector(".temp .numb-2").innerText =
+            Math.floor(feels_like);
+          weatherPart.querySelector(
+            ".humidity span"
+          ).innerText = `${humidity}%`;
           console.log(data);
         })
         .catch((err) => alert("invalid city name"));
+
+      wrapper.classList.add("active");
+      cityInput.value = "";
+    });
+
+    arrowBack.addEventListener("click", () => {
+      wrapper.classList.remove("active");
     });
   </script>
 </html>

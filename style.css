@@ -74,15 +74,22 @@ body {
 	flex-direction: column;
   margin: 20px 25px 30px;
 }
-/* .wrapper.active .input-part{
+.wrapper.active .input-part{
   display: none;
-} */
+}
 
-.wrapper h1{
+.wrapper header{
   font-size: 30px;
   font-weight: 500;
   color: #43AFFC;
   padding: 10px 15px;
+}
+header i{
+  font-size: 0em;
+  cursor: pointer;
+}
+.wrapper.active header i{
+  font-size: 30px;
 }
 
 .input-part input{
@@ -91,7 +98,7 @@ body {
   padding: 15px;
   border: 1px solid #ccc;
 	font-size: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .input-part input:focus{
 	outline-color: thistle;
@@ -104,6 +111,72 @@ body {
 	background-color: #43AFFC;
 	font-size: 20px;
 	border: none;
+	border-radius: 10px;
 	text-align: center;
+	cursor: pointer;
+}
+
+
+.wrapper .weather-part{
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper.active .weather-part{
+  display: flex;
+}
+.weather-part .location{
+  display: flex;
+  font-size: 22px;
+	font-weight: 700;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+.location i{
+	color: #0095ff;
+  font-size: 30px;
+  margin: -5px 5px 0 0;
+}
+
+.weather-part .bottom-details{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.bottom-details .column{
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+.column i{
+  color: #5DBBFF;
+  font-size: 45px;
+}
+.column.humidity{
+  border-left: 1px solid #ccc;
+}
+.column .details{
+  margin-left: 3px;
+}
+.details span{
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: -3px;
+}
+.details .temp .deg{
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+.column .details p{
+  font-size: 16px;
+  margin-top: 3px;
 }
 /***** general CSS end *****/
