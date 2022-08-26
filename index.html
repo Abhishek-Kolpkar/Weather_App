@@ -75,7 +75,7 @@
             ".location span"
           ).innerText = `${city}, ${country}`;
           weatherPart.querySelector(".temp .numb-2").innerText =
-            Math.floor(feels_like);
+            Math.floor(feels_like - 273);
           weatherPart.querySelector(
             ".humidity span"
           ).innerText = `${humidity}%`;
