@@ -10,4 +10,4 @@ https://pro-abhi.github.io/Weather_App/
 
 
 # Weather App Output Screen
-![output](https://user-images.githubusercontent.com/105339279/186913919-ca99468b-f30e-4caf-af67-83a6f424b60c.png)
+![output](https://user-images.githubusercontent.com/105339279/186960753-442f2884-61c3-472d-8708-0b2fa1fb944c.png)
